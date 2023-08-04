@@ -59,7 +59,7 @@
 				td1 =
 					'<td colspan="1" rowspan="1" id="list-line" align="center">'
 				htmlStr += td1 + (num) + '</td>'; //序号
-				htmlStr += td1 + emp.symbol + '</td>'; //代码
+				htmlStr += td1 + '<a href="https://gushitong.baidu.com/stock/ab-' + emp.symbol + '">' + emp.symbol + '</a>' + '</td>';  //代码 标签可以跳转
 				htmlStr += td1 + emp.name + "</td>"; //名称
 				htmlStr += td1 + emp.hy + "</td>";
 				htmlStr += td1 + emp.hy2 + "</td>";
