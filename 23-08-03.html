@@ -59,7 +59,8 @@
 				td1 =
 					'<td colspan="1" rowspan="1" id="list-line" align="center">'
 				htmlStr += td1 + (num) + '</td>'; //序号
-				htmlStr += td1 + emp.symbol + '</td>'; //代码
+				htmlStr += td1 + '<a href="https://www.runoob.com/">' + emp.symbol + '</a>' + '</td>'; //代码
+				
 				htmlStr += td1 + emp.name + "</td>"; //名称
 				htmlStr += td1 + emp.hy + "</td>";
 				htmlStr += td1 + emp.hy2 + "</td>";
@@ -72,6 +73,7 @@
 				htmlStr += td1 + emp.topHigh250 + "</td>";
 				htmlStr += td1 + emp.koudai + "</td>";
 				htmlStr += "</tr>";
+				// htmlStr += "<a href='https://www.runoob.com/'>跳转</a>"
 			}
 			// console.log(allcode);
 			//将拼接的字符串放进tbody里
