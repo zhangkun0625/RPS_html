@@ -10922,23 +10922,52 @@
 			"koudai": 0
 		}];
 
+	
+
 		var copyBtn = document.getElementById("copybtn"); //先筛选在复制
 		copyBtn.onclick = function() {
-
-			var e = document.getElementById("copytemp");
-			e.value = allcode
-			e.select(); // 选择对象
-
+			
+			var input = document.createElement('input');
+			// 设置input的值为要复制的文本
+			input.value = allcode
+			// 将input元素添加到body中
+			document.body.appendChild(input);
+			// 选中input中的文本
+			input.select();
+			// 执行复制命令
+			// document.execCommand('copy');
+			
 			try {
 				document.execCommand('copy');
 			} catch (e) {
 				console.log('浏览器不支持该功能');
 			}
-			// console.log(allcode);
-			e.value = ''
+			// e.value = ''
 			alert("复制成功");
+			
+			
+			// 移除input元素
+			document.body.removeChild(input);
+			
+			
+			// return
+			
+			
+
+			// var e = document.getElementById("copytemp");
+			// e.value = allcode
+			// e.select(); // 选择对象
+
+			// try {
+			// 	document.execCommand('copy');
+			// } catch (e) {
+			// 	console.log('浏览器不支持该功能');
+			// }
+			// e.value = ''
+			// alert("复制成功");
 		}
 
+		var allcode = ''
 		var displayBtnElt = document.getElementById("exportbtn");
 		displayBtnElt.onclick = function() {
 			// console.log(json);
@@ -10951,7 +10980,7 @@
 			var emps = json;
 			var htmlStr = "";
 			var num = 0;
-			var allcode = ''
+			// var allcode = ''
 			for (var i = 0; i < emps.length; i++) {
 				var emp = emps[i];
 				if (emp.rps3 < rpsKeyNum3) {
@@ -10993,7 +11022,6 @@
 				htmlStr += td1 + emp.koudai + "</td>";
 				htmlStr += "</tr>";
 			}
-			// console.log(allcode);
 			//将拼接的字符串放进tbody里
 			document.getElementById("tBody").innerHTML = htmlStr;
 			//将总人数放进末尾的span标签内
