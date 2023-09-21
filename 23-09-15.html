@@ -10934,37 +10934,17 @@
 			document.body.appendChild(input);
 			// 选中input中的文本
 			input.select();
-			// 执行复制命令
-			// document.execCommand('copy');
 			
+			// 执行复制命令
 			try {
 				document.execCommand('copy');
 			} catch (e) {
 				console.log('浏览器不支持该功能');
 			}
-			// e.value = ''
 			alert("复制成功");
-			
-			
 			// 移除input元素
 			document.body.removeChild(input);
 			
-			
-			// return
-			
-			
-
-			// var e = document.getElementById("copytemp");
-			// e.value = allcode
-			// e.select(); // 选择对象
-
-			// try {
-			// 	document.execCommand('copy');
-			// } catch (e) {
-			// 	console.log('浏览器不支持该功能');
-			// }
-			// e.value = ''
-			// alert("复制成功");
 		}
 
 		var allcode = ''
@@ -10980,7 +10960,8 @@
 			var emps = json;
 			var htmlStr = "";
 			var num = 0;
-			// var allcode = ''
+
+			allcode = ''
 			for (var i = 0; i < emps.length; i++) {
 				var emp = emps[i];
 				if (emp.rps3 < rpsKeyNum3) {
@@ -11086,7 +11067,8 @@
 <table border='1' cellspacing='0' cellpadding='0'
 	style=" border: 1px solid #CECFD4; border-collapse: collapse; font-size: 12px; font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑',Arial,sans-serif;">
 
-	<input type="text" id="copytemp" value="" style="width:10;height:10;">
+
+	<a href="https://rps_html.4everland.app"> 查看全部数据 </a>
 
 	<h4>PS：点击按钮, 根据自己策略输入条件筛选,需要先点筛选按钮在点复制
 		<br>
@@ -11094,9 +11076,10 @@
 		<br>
 		120日新高的0.95表示收盘价达到120日的最高价的95%，1表示已经是最高价（最高价是以每日收盘价为准的）
 	</h4>
-
+	
+	
 	<div class="left-box">
-		<div id="exportbtn">筛选结果 </div>
+		<div id="exportbtn">筛选结果 </div> 
 		<div id="copybtn">复制代码</div>
 	</div>
 
@@ -11123,7 +11106,7 @@
 
 	<h5> </h5>
 	筛选结果总数：<span id="count">0</span>
-	<thead>
+	<thead> //======================
 
 		<tr style="text-align: center; vertical-align: middle; height: 30px; background-color: #ECEDF2;">
 			<th colspan="13" rowspan="1" id="list-line" align="center">23-09-15日数据
